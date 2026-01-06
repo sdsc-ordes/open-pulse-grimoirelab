@@ -1,10 +1,32 @@
 {
-    "grimoirelab": {
+    "gimie": {
       "meta": {
-        "title": "GrimoireLab"
+        "title": "Gimie"
       },
       "git": [
-          "https://github.com/chaoss/grimoirelab.git"
+          "https://github.com/sdsc-ordes/gimie"
+        ],
+      "github": [
+          "sdsc-ordes/gimie"
+        ]
+      },
+    "sdsc ordes": {
+      "meta": {
+        "title": "SDSC ORDES"
+      },
+      "git": [
+          "https://github.com/sdsc-ordes/gimie",
+          "https://github.com/sdsc-ordes/kg-llm-interface",
+          "https://github.com/sdsc-ordes/tripsu",
+          "https://github.com/sdsc-ordes/quitsh",
+          "https://github.com/sdsc-ordes/fuzon"
+        ],
+      "github": [
+          "sdsc-ordes/gimie",
+          "sdsc-ordes/kg-llm-interface",
+          "sdsc-ordes/tripsu",
+          "sdsc-ordes/quitsh",
+          "sdsc-ordes/fuzon"
         ]
     }
   }
