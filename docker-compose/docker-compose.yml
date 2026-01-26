@@ -116,7 +116,7 @@ services:
         - ../default-grimoirelab-settings/uwsgi_params:/etc/nginx/uwsgi_params
         - sortinghat-static:/sortinghat:ro
       ports:
-        - 8000:8000
+        - 7508:8000 # PORT EDIT needs to be here to expose on a different port.
       environment:
         - KIBANA_HOST=http://opensearch-dashboards:5601/
       depends_on:

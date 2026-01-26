@@ -14,6 +14,8 @@ Checklist before launching:
 - all API tokens for gitlab or github are set in `.env`
 - all projects that need to be extracted are in projects.json under the right categories (git, github and gitlab)
 
+For exposing the open search dashboards on a specific port, configure the nginx ports in docker compose.
+
 Go to docker compose folder and do `docker compose up -d`. Give it some time (10-20 min), Mordred will extract all repos.
 
 
