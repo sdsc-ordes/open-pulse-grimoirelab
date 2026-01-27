@@ -45,6 +45,19 @@
           "materialscloud-org/mc-frontend",
           "MMathisLab/AcinoSet"
         ]
-    }
+    },
+    "eth": {
+      "meta": {
+        "title": "ETH Zurich"
+      },
+      "git": [
+          "https://github.com/ethz-asl/ethzasl_msf",
+          "https://github.com/eth-library/devbox-spring-demo"
+        ],
+      "github": [
+          "ethz-asl/ethzasl_msf",
+          "eth-library/devbox-spring-demo"
+        ]
+      }
 
   }
