@@ -21,6 +21,8 @@ Go to docker compose folder and do `docker compose up -d`. Give it some time (10
 
 ## Integrate the Dashboards (Sigils, OpenSearch) with the Data Extraction (Mordred, Sorting Hat)
 
+Do this process after the first deployment of the GrimoireLab via docker compose.
+
 ### 1. Check the indexes
 
 This allows to confirm the Mordred extraction went well for all your projects in projects.json. You can also confirm by seeing `collection finished` in the Mordred docker logs. 
@@ -85,3 +87,7 @@ curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_fin
 ```
 
 ## Updating projects
+
+1. Edit the `projects.json` file. 
+2. Restart the mordred container with `docker compose restart mordred`
+3. Remember to `Refresh` the Dashboard
