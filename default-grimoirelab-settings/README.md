@@ -6,7 +6,7 @@ Adapt all your credentials to the following commands.
 
 For any interactions with Github, ensure you have made your GitHub API token available in the environment where GrimoireLabs is deployed (with `export GITHUB_API_TOKEN`), as it will be sourced into the setup.cfg for project extractions. 
 
-## 0. Launch Grimoire
+## Launch Grimoire
 
 Checklist before launching:
 
@@ -19,7 +19,9 @@ For exposing the open search dashboards on a specific port, configure the nginx 
 Go to docker compose folder and do `docker compose up -d`. Give it some time (10-20 min), Mordred will extract all repos.
 
 
-## 1. Check the indexes
+## Integrate the Dashboards (Sigils, OpenSearch) with the Data Extraction (Mordred, Sorting Hat)
+
+### 1. Check the indexes
 
 This allows to confirm the Mordred extraction went well for all your projects in projects.json. You can also confirm by seeing `collection finished` in the Mordred docker logs. 
 
@@ -31,7 +33,7 @@ curl -k -u admin:GrimoireLab.1 -X GET "https://localhost:9200/_cat/indices?v"
 
 (ignore check of certificates with `-k`)
 
-## 2. Make / Get the data sources (index patterns)
+### 2. Make / Get the data sources (index patterns)
 
 This command is relevant for creating the index patterns for git, github and gitlab. 
 
@@ -52,7 +54,7 @@ curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/ind
 
 There is also a script in `dashboards-sigils` folder which can be run with `./make_index_patterns.sh` which makes such patterns for git, github and gitlab. Be sure to adapt the credentials.
 
-## 3. List data sources / index patterns
+### 3. List data sources / index patterns
 
 Sanity check. It can also be seen on OpenSearch UI under Dashboard Management - Index patterns.
 
@@ -61,7 +63,7 @@ curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_fin
   -H "osd-xsrf: true"
 ```
 
-## 4. Make the SIGIL dashboard
+### 4. Make the SIGIL dashboard
 
 ```bash
 curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" \
@@ -73,7 +75,7 @@ curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/_im
 
 There is also a script in `dashboards-sigils` which can be run with `./upload_sigils_to_opensearch.sh` and uploads all dashboards relevant to git, github and gitlab (downloaded from the link above). Careful to adapt any changed credentials, the default ones are in the script.
 
-## 5. Get the dashboards
+### 5. Get the dashboards
 
 It can also be seen on OpenSearch UI under Dashbaords Management - Saved Objects.
 
@@ -81,3 +83,5 @@ It can also be seen on OpenSearch UI under Dashbaords Management - Saved Objects
 curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_find?type=dashboard" \   
   -H "osd-xsrf: true"
 ```
+
+## Updating projects

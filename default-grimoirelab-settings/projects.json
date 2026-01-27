@@ -28,5 +28,21 @@
           "sdsc-ordes/quitsh",
           "sdsc-ordes/fuzon"
         ]
+    },
+    "epfl": {
+      "meta": {
+        "title": "EPFL"
+      },
+      "git": [
+          "https://github.com/DeepLabCut/DeepLabCut",
+          "https://github.com/pyxu-org/pyxu",
+          "https://github.com/materialscloud-org/mc-frontend"
+        ],
+      "github": [
+          "deeplabcut/deeplabcut",
+          "pyxu-org/pyxu",
+          "materialscloud-org/mc-frontend"
+        ]
     }
+
   }
