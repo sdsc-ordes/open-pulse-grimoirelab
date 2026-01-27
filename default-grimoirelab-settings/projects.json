@@ -36,12 +36,14 @@
       "git": [
           "https://github.com/DeepLabCut/DeepLabCut",
           "https://github.com/pyxu-org/pyxu",
-          "https://github.com/materialscloud-org/mc-frontend"
+          "https://github.com/materialscloud-org/mc-frontend",
+          "https://github.com/MMathisLab/AcinoSet"
         ],
       "github": [
           "deeplabcut/deeplabcut",
           "pyxu-org/pyxu",
-          "materialscloud-org/mc-frontend"
+          "materialscloud-org/mc-frontend",
+          "MMathisLab/AcinoSet"
         ]
     }
 
