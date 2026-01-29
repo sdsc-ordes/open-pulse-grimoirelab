@@ -18,24 +18,11 @@ For exposing the open search dashboards on a specific port, configure the nginx 
 
 Go to docker compose folder and do `docker compose up -d`. Give it some time (10-20 min), Mordred will extract all repos.
 
-
 ## Integrate the Dashboards (Sigils, OpenSearch) with the Data Extraction (Mordred, Sorting Hat)
 
 Do this process after the first deployment of the GrimoireLab via docker compose.
 
-### 1. Check the indexes
-
-This allows to confirm the Mordred extraction went well for all your projects in projects.json. You can also confirm by seeing `collection finished` in the Mordred docker logs. 
-
-It can also be seen on OpenSearch UI under Index Management - Indexes.
-
-```bash
-curl -k -u admin:GrimoireLab.1 -X GET "https://localhost:9200/_cat/indices?v"
-```
-
-(ignore check of certificates with `-k`)
-
-### 2. Make / Get the data sources (index patterns)
+### 1. Make / Get the data sources (index patterns)
 
 This command is relevant for creating the index patterns for git, github and gitlab. 
 
@@ -56,16 +43,7 @@ curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/ind
 
 There is also a script in `dashboards-sigils` folder which can be run with `./make_index_patterns.sh` which makes such patterns for git, github and gitlab. Be sure to adapt the credentials.
 
-### 3. List data sources / index patterns
-
-Sanity check. It can also be seen on OpenSearch UI under Dashboard Management - Index patterns.
-
-```bash
-curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_find?type=index-pattern" \
-  -H "osd-xsrf: true"
-```
-
-### 4. Make the SIGIL dashboard
+### 2. Make the SIGIL dashboards
 
 ```bash
 curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" \
@@ -77,13 +55,28 @@ curl -u admin:GrimoireLab.1 -X POST "http://localhost:5601/api/saved_objects/_im
 
 There is also a script in `dashboards-sigils` which can be run with `./upload_sigils_to_opensearch.sh` and uploads all dashboards relevant to git, github and gitlab (downloaded from the link above). Careful to adapt any changed credentials, the default ones are in the script.
 
-### 5. Get the dashboards
+### 3. Custom Bug Fixes
 
-It can also be seen on OpenSearch UI under Dashbaords Management - Saved Objects.
+#### A. Dashboards
+
+If there are issues in the GitHub PR and Issues dashboards with fields like Submitters then the following bug fix is necessary. Follow these community recommendations: the fix is the following: https://github.com/chaoss/grimoirelab-sigils/issues/517
+
+#### B. Aliases
+
+If any of the aliases are missing in dashboards with a message such as `Opensearch index does not exist: INDEX`, you can create it with the following command (either cli or in Dev Tools in the dashboard).
 
 ```bash
-curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_find?type=dashboard" \   
-  -H "osd-xsrf: true"
+POST /_aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "github_enriched",
+        "alias": "github_issues"
+      }
+    }
+  ]
+}
 ```
 
 ## Updating projects
@@ -91,3 +84,39 @@ curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_fin
 1. Edit the `projects.json` file. 
 2. Restart the mordred container with `docker compose restart mordred`
 3. Remember to `Refresh` the Dashboard
+
+## Utils for debugging
+
+### List data sources / index patterns
+
+Sanity check. It can also be seen on OpenSearch UI under Dashboard Management - Index patterns.
+
+```bash
+curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_find?type=index-pattern" \
+  -H "osd-xsrf: true"
+```
+
+### Check the indexes and aliases
+
+This allows to confirm the Mordred extraction went well for all your projects in projects.json. You can also confirm by seeing `collection finished` in the Mordred docker logs. 
+
+It can also be seen on OpenSearch UI under Index Management - Indexes.
+
+```bash
+curl -k -u admin:GrimoireLab.1 -X GET "https://localhost:9200/_cat/indices?s=i"
+```
+
+```bash
+curl -k -u admin:GrimoireLab.1 -X GET "https://localhost:9200/_cat/aliases?v"
+```
+
+(ignore check of certificates with `-k`)
+
+### Get the dashboards
+
+It can also be seen on OpenSearch UI under Dashbaords Management - Saved Objects.
+
+```bash
+curl -u admin:GrimoireLab.1 -X GET "http://localhost:5601/api/saved_objects/_find?type=dashboard" \   
+  -H "osd-xsrf: true"
+```
