@@ -1,16 +1,5 @@
 {
-    "gimie": {
-      "meta": {
-        "title": "Gimie"
-      },
-      "git": [
-          "https://github.com/sdsc-ordes/gimie"
-        ],
-      "github": [
-          "sdsc-ordes/gimie"
-        ]
-      },
-    "sdsc ordes": {
+    "sdsc_ordes": {
       "meta": {
         "title": "SDSC ORDES"
       },
@@ -242,6 +231,197 @@
           "sdsc-ordes/wedowind",
           "sdsc-ordes/workflow-explorer"
         ]
+    },
+    "sdsc_ordes.biomedical": {
+      "meta": {
+        "title": "SDSC ORDES Biomedical"
+      },
+      "git": [
+        "https://github.com/sdsc-ordes/deid-module",
+        "https://github.com/sdsc-ordes/modos-poster",
+        "https://github.com/sdsc-ordes/modos-schema",
+        "https://github.com/sdsc-ordes/nds-lucid-graphdb-loader",
+        "https://github.com/sdsc-ordes/nds-lucid-graphdb-syncer",
+        "https://github.com/sdsc-ordes/nds-lucid-ingestion",
+        "https://github.com/sdsc-ordes/nds-lucid-web-app"
+      ],
+      "github": [
+        "sdsc-ordes/deid-module",
+        "sdsc-ordes/modos-poster",
+        "sdsc-ordes/modos-schema",
+        "sdsc-ordes/nds-lucid-graphdb-loader",
+        "sdsc-ordes/nds-lucid-graphdb-syncer",
+        "sdsc-ordes/nds-lucid-ingestion",
+        "sdsc-ordes/nds-lucid-web-app"
+      ],
+      "github:repo": [
+        "sdsc-ordes/deid-module",
+        "sdsc-ordes/modos-poster",
+        "sdsc-ordes/modos-schema",
+        "sdsc-ordes/nds-lucid-graphdb-loader",
+        "sdsc-ordes/nds-lucid-graphdb-syncer",
+        "sdsc-ordes/nds-lucid-ingestion",
+        "sdsc-ordes/nds-lucid-web-app"
+      ],
+      "github:issue": [
+        "sdsc-ordes/deid-module",
+        "sdsc-ordes/modos-poster",
+        "sdsc-ordes/modos-schema",
+        "sdsc-ordes/nds-lucid-graphdb-loader",
+        "sdsc-ordes/nds-lucid-graphdb-syncer",
+        "sdsc-ordes/nds-lucid-ingestion",
+        "sdsc-ordes/nds-lucid-web-app"
+      ]
+    },
+    "sdsc_ordes.digital_society": {
+      "meta": {
+        "title": "SDSC ORDES Digital Society"
+      },
+      "git": [
+        "https://github.com/sdsc-ordes/debates-app",
+        "https://github.com/sdsc-ordes/debates-solr",
+        "https://github.com/sdsc-ordes/debates-ui",
+        "https://github.com/sdsc-ordes/dt-political-debates",
+        "https://github.com/sdsc-ordes/imaging-plaza",
+        "https://github.com/sdsc-ordes/imaging-plaza-fair-indicator-api",
+        "https://github.com/sdsc-ordes/imaging-plaza-ontology",
+        "https://github.com/sdsc-ordes/imaging-plaza-search",
+        "https://github.com/sdsc-ordes/imaging-plaza-webapp",
+        "https://github.com/sdsc-ordes/mava-api",
+        "https://github.com/sdsc-ordes/open-pulse-quickstart",
+        "https://github.com/sdsc-ordes/open-pulse-graph-classifier"
+      ],
+      "github": [
+        "sdsc-ordes/debates-app",
+        "sdsc-ordes/debates-solr",
+        "sdsc-ordes/debates-ui",
+        "sdsc-ordes/dt-political-debates",
+        "sdsc-ordes/imaging-plaza",
+        "sdsc-ordes/imaging-plaza-fair-indicator-api",
+        "sdsc-ordes/imaging-plaza-ontology",
+        "sdsc-ordes/imaging-plaza-search",
+        "sdsc-ordes/imaging-plaza-webapp",
+        "sdsc-ordes/mava-api",
+        "sdsc-ordes/open-pulse-quickstart",
+        "sdsc-ordes/open-pulse-graph-classifier"
+      ],
+      "github:repo": [
+        "sdsc-ordes/debates-app",
+        "sdsc-ordes/debates-solr",
+        "sdsc-ordes/debates-ui",
+        "sdsc-ordes/dt-political-debates",
+        "sdsc-ordes/imaging-plaza",
+        "sdsc-ordes/imaging-plaza-fair-indicator-api",
+        "sdsc-ordes/imaging-plaza-ontology",
+        "sdsc-ordes/imaging-plaza-search",
+        "sdsc-ordes/imaging-plaza-webapp",
+        "sdsc-ordes/mava-api",
+        "sdsc-ordes/open-pulse-quickstart",
+        "sdsc-ordes/open-pulse-graph-classifier"
+      ],
+      "github:issue": [
+        "sdsc-ordes/debates-app",
+        "sdsc-ordes/debates-solr",
+        "sdsc-ordes/debates-ui",
+        "sdsc-ordes/dt-political-debates",
+        "sdsc-ordes/imaging-plaza",
+        "sdsc-ordes/imaging-plaza-fair-indicator-api",
+        "sdsc-ordes/imaging-plaza-ontology",
+        "sdsc-ordes/imaging-plaza-search",
+        "sdsc-ordes/imaging-plaza-webapp",
+        "sdsc-ordes/mava-api",
+        "sdsc-ordes/open-pulse-quickstart",
+        "sdsc-ordes/open-pulse-graph-classifier"
+      ]
+    },
+    "sdsc_ordes.energy": {
+      "meta": {
+        "title": "SDSC ORDES Energy"
+      },
+      "git": [
+        "https://github.com/sdsc-ordes/arema-ontology",
+        "https://github.com/sdsc-ordes/bedretto-ontology",
+        "https://github.com/sdsc-ordes/odtp-component-client",
+        "https://github.com/sdsc-ordes/odtp-llm-parser",
+        "https://github.com/sdsc-ordes/odtp-pyannote-whisper",
+        "https://github.com/sdsc-ordes/odtp-shacl-maker",
+        "https://github.com/sdsc-ordes/odtp-unog-digitalrecordings-scrapper",
+        "https://github.com/sdsc-ordes/wedowind"
+      ],
+      "github": [
+        "sdsc-ordes/arema-ontology",
+        "sdsc-ordes/bedretto-ontology",
+        "sdsc-ordes/odtp-component-client",
+        "sdsc-ordes/odtp-llm-parser",
+        "sdsc-ordes/odtp-pyannote-whisper",
+        "sdsc-ordes/odtp-shacl-maker",
+        "sdsc-ordes/odtp-unog-digitalrecordings-scrapper",
+        "sdsc-ordes/wedowind"
+      ],
+      "github:repo": [
+        "sdsc-ordes/arema-ontology",
+        "sdsc-ordes/bedretto-ontology",
+        "sdsc-ordes/odtp-component-client",
+        "sdsc-ordes/odtp-llm-parser",
+        "sdsc-ordes/odtp-pyannote-whisper",
+        "sdsc-ordes/odtp-shacl-maker",
+        "sdsc-ordes/odtp-unog-digitalrecordings-scrapper",
+        "sdsc-ordes/wedowind"
+      ],
+      "github:issue": [
+        "sdsc-ordes/arema-ontology",
+        "sdsc-ordes/bedretto-ontology",
+        "sdsc-ordes/odtp-component-client",
+        "sdsc-ordes/odtp-llm-parser",
+        "sdsc-ordes/odtp-pyannote-whisper",
+        "sdsc-ordes/odtp-shacl-maker",
+        "sdsc-ordes/odtp-unog-digitalrecordings-scrapper",
+        "sdsc-ordes/wedowind"
+      ]
+
+    },
+    "sdsc_ordes.environmental": {
+      "meta": {
+        "title": "SDSC ORDES Environmental"
+      },
+      "git": [
+        "https://github.com/sdsc-ordes/digiwild"
+      ],
+      "github": [
+        "sdsc-ordes/digiwild"
+      ],
+      "github:repo": [
+        "sdsc-ordes/digiwild"
+      ]
+    },
+    "sdsc_ordes.infrastructure": {
+      "meta": {
+        "title": "SDSC ORDES Big Infrastructure"
+      },
+      "git": [
+        "https://github.com/sdsc-ordes/catplus-chembord",
+          "https://github.com/sdsc-ordes/catplus-converters",
+          "https://github.com/sdsc-ordes/catplus-docs",
+          "https://github.com/sdsc-ordes/catplus-ontology"
+      ],
+      "github": [
+        "sdsc-ordes/catplus-chembord",
+          "sdsc-ordes/catplus-converters",
+          "sdsc-ordes/catplus-docs",
+          "sdsc-ordes/catplus-ontology"
+      ],
+      "github:repo": [
+        "sdsc-ordes/catplus-chembord",
+          "sdsc-ordes/catplus-converters",
+          "sdsc-ordes/catplus-docs",
+          "sdsc-ordes/catplus-ontology"
+      ],
+      "github:issue": [
+        "sdsc-ordes/catplus-chembord",
+          "sdsc-ordes/catplus-converters",
+          "sdsc-ordes/catplus-docs",
+          "sdsc-ordes/catplus-ontology"
+      ]
     },
     "epfl": {
       "meta": {
