@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WATCHED_FILE="../default_grimoirelab-settings/projects.json"
+WATCHED_FILE="../default-grimoirelab-settings/projects.json"
 STATE_FILE="/tmp/projects_file_checksum_mordred"
 
 if [ ! -f "$WATCHED_FILE" ]; then
