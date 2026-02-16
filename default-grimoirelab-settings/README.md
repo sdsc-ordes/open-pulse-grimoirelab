@@ -87,7 +87,7 @@ POST /_aliases
 
 For automatic updating. There is a script in `dashboards-sigils` which can be run with `./intake_new_projects.sh`. 
 
-You can then create a cronjob for it with `crontab -e` and setting `*/5 * * * * /open-pulse/open-pulse-grimoirelab//dashboards-sigils/intake_new_projects.sh >> /open-pulse/open-pulse-grimoirelab//cron_logs/intake_new_projects.log 2>&1`. (Note: replace paths with your paths from root)
+You can then create a cronjob for it with `crontab -e` and setting `*/5 * * * * /open-pulse/open-pulse-grimoirelab/dashboards-sigils/intake_new_projects.sh >> /open-pulse/open-pulse-grimoirelab/cron_logs/intake_new_projects.log 2>&1`. (Note: replace paths with your paths from root)
 
 ## Utils for debugging
 
