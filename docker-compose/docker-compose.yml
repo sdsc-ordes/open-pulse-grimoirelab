@@ -44,7 +44,7 @@ services:
         - 9200:9200
         - 9600:9600 # required for Performance Analyzer
       volumes:
-        - opensearch-data:/usr/share/opensearch/data
+        - /srv/grimoire-lab/opensearch-data:/usr/share/opensearch/data
 
     opensearch-dashboards:
       image: opensearchproject/opensearch-dashboards:3
