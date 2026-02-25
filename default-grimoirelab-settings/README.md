@@ -57,11 +57,7 @@ There is also a script in `dashboards-sigils` which can be run with `./upload_si
 
 ### 3. Custom Bug Fixes
 
-#### A. Dashboards
-
-If there are issues in the GitHub PR and Issues dashboards with fields like Submitters then the following bug fix is necessary. Follow these community recommendations: the fix is the following: https://github.com/chaoss/grimoirelab-sigils/issues/517
-
-#### B. Aliases
+#### A. Aliases
 
 If any of the aliases are missing in dashboards with a message such as `Opensearch index does not exist: INDEX`, you can create it with the following command (either cli or in Dev Tools in the dashboard).
 
@@ -78,6 +74,10 @@ POST /_aliases
   ]
 }
 ```
+
+#### B. Dashboards
+
+If there are issues in the GitHub PR and Issues dashboards with fields like Submitters then the following bug fix is necessary. Follow these community recommendations: the fix is the following: https://github.com/chaoss/grimoirelab-sigils/issues/517
 
 ## Updating projects
 
