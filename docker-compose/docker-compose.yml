@@ -12,7 +12,7 @@ services:
         test: [ "CMD", "/usr/local/bin/healthcheck.sh", "--su=root", "--connect", "--innodb_initialized" ]
         retries: 5
       volumes:
-        - mariadb_data:/var/lib/mysql
+        - /srv/grimoire-lab/mariadb:/var/lib/mysql
 
     valkey:
       image: valkey/valkey:8
@@ -22,7 +22,7 @@ services:
         test: [ "CMD", "valkey-cli", "--raw", "incr", "ping" ]
         retries: 5
       volumes:
-        - valkey_data:/data
+        - /srv/grimoire-lab/valkey:/data
 
     opensearch-node1:
       image: opensearchproject/opensearch:3
@@ -59,7 +59,7 @@ services:
       volumes:
         - ../default-grimoirelab-settings/setup.cfg:/home/grimoire/conf/setup.cfg
         - ../default-grimoirelab-settings/projects.json:/home/grimoire/conf/projects.json
-        - /tmp/:/home/grimoire/logs
+        - /srv/grimoire-lab/mordred/logs:/home/grimoire/logs
       depends_on:
         nginx:
           condition: service_healthy
@@ -84,7 +84,7 @@ services:
       expose:
         - "9314"
       volumes:
-        - sortinghat-static:/opt/venv/lib/python3.12/site-packages/sortinghat/static/
+        - /srv/grimoire-lab/sortinghat/static:/opt/venv/lib/python3.12/site-packages/sortinghat/static/
       depends_on:
         mariadb:
           condition: service_healthy
@@ -114,7 +114,7 @@ services:
       volumes:
         - ../default-grimoirelab-settings/nginx.conf.template:/etc/nginx/templates/default.conf.template
         - ../default-grimoirelab-settings/uwsgi_params:/etc/nginx/uwsgi_params
-        - sortinghat-static:/sortinghat:ro
+        - /srv/grimoire-lab/sortinghat/static:/sortinghat:ro
       ports:
         - 7508:8000 # PORT EDIT needs to be here to expose on a different port.
       environment:
@@ -125,8 +125,3 @@ services:
         test: "curl -s --head http://localhost:8000/identities/api/ | grep Set-Cookie || exit 1"
         retries: 5
 
-volumes:
-  sortinghat-static:
-  opensearch-data:
-  mariadb_data:
-  valkey_data:
